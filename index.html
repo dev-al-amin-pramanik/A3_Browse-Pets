@@ -26,7 +26,7 @@
       rel="stylesheet"
     />
 
-    <!--Daisy Ui Cdn-->
+    <!--Daisy UI Cdn-->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
       rel="stylesheet"
@@ -49,6 +49,55 @@
         },
       };
     </script>
+
+    <style>
+      /* Logo Animation */
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-15px);
+        }
+        60% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .bouncing-logo {
+        animation: bounce 1s infinite;
+      }
+
+      /* Text animation */
+      @keyframes textFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-text {
+        animation: textFadeIn 1s ease-out forwards;
+      }
+
+      /* Button hover */
+      .button-hover {
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .button-hover:hover {
+        background-color: aquamarine;
+        transform: scale(1.05);
+      }
+    </style>
   </head>
 
   <body>
@@ -63,7 +112,11 @@
         >
           <!--left-->
           <div class="flex justify-center items-center gap-4">
-            <img src="./assets/logo-header.png" alt="logo" />
+            <img
+              src="./assets/logo-header.png"
+              alt="logo"
+              class="bouncing-logo"
+            />
             <p class="text-2xl">
               Browse<span class="text-[#FFDC26]">4</span>Pets
             </p>
@@ -85,11 +138,13 @@
             <i class="fa-regular fa-bell"></i>
             <i class="fa-solid fa-magnifying-glass"></i>
             <button
-              class="px-6 py-2 rounded-lg font-semibold border-2 border-[#FFDC26]"
+              class="px-6 py-2 rounded-lg font-semibold border-2 border-[#FFDC26] button-hover"
             >
               Login
             </button>
-            <button class="px-6 py-2 rounded-lg font-semibold bg-[#FFDC26]">
+            <button
+              class="px-6 py-2 rounded-lg font-semibold bg-[#FFDC26] button-hover"
+            >
               Register
             </button>
           </div>
@@ -99,7 +154,11 @@
         <div
           class="w-11/12 mx-auto py-4 md:hidden flex justify-between items-center"
         >
-          <img src="./assets/logo-header.png" alt="logo" />
+          <img
+            src="./assets/logo-header.png"
+            alt="logo"
+            class="bouncing-logo"
+          />
           <i class="fa-solid fa-bars text-2xl"></i>
         </div>
       </nav>
@@ -109,27 +168,29 @@
         <div
           class="relative bg-[url('./assets/cat-big.png')] bg-no-repeat bg-cover bg-center"
         >
-          <!--Animation-->
+          <!-- Cat toy animation-->
           <img
             class="absolute -top-40 left-2/4 hidden lg:block animate-bounce z-10 h-[400px]"
-            src="./assets/cat-toy.png"
+            src="./assets/cat_toy.png"
             alt=""
           />
 
           <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mt-8 lg:mt-24"
+            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mt-8 lg:mt-24 animate-text"
           >
             Pamper Your Pet, <br />
             Because They Deserve <br />
             the Best
           </h1>
-          <p class="text-lg md:text-xl lg:text-2xl mb-6 text-[#6e6d6d]">
+          <p
+            class="text-lg md:text-xl lg:text-2xl mb-6 text-[#6e6d6d] animate-text"
+          >
             Discover a world of treats, toys, and essentials handpicked for
             <br />
             your furry friends. Shop now and make tails wag with joy!
           </p>
           <button
-            class="px-6 py-2 rounded-lg font-semibold bg-[#FFDC26] mb-44 md:mb-96 text-xl"
+            class="px-6 py-2 rounded-lg font-semibold bg-[#FFDC26] mb-44 md:mb-96 text-xl button-hover"
           >
             Find a pet
           </button>
@@ -140,60 +201,6 @@
 
     <!--Main Start-->
     <main>
-      <!--About us-->
-      <section class="w-11/12 mx-auto my-20 lg:my-32">
-        <div class="md:flex justify-center items-center gap-5">
-          <!--right-->
-          <div class="lg:px-10 lg:py-20 flex-1 md:order-2">
-            <div class="px-10 mx-auto">
-              <h1 class="text-4xl font-bold mb-5">About Us</h1>
-              <p class="mb-5 text-xl text-[#6e6d6d]">
-                At Broese4Pet, we are dedicated to ensuring your pets receive
-                the love and care they deserve. From premium pet products to
-                expert advice, we strive to make every tail wag and every purr
-                louder. Join us in creating a happier, healthier world for your
-                furry companions!
-              </p>
-              <ul class="text-2xl font-semibold mb-10">
-                <li
-                  class="px-10 py-5 rounded-lg mb-4 border-2 border-[#f1e3d9]"
-                >
-                  <i class="fa-solid fa-square-check"></i> Over 10 years of
-                  experience
-                </li>
-                <li
-                  class="px-10 py-5 rounded-lg mb-4 border-2 border-[#f1e3d9]"
-                >
-                  <i class="fa-solid fa-square-check"></i> 20 talented vets
-                  ready to help you
-                </li>
-                <li
-                  class="px-10 py-5 rounded-lg mb-4 border-2 border-[#f1e3d9]"
-                >
-                  <i class="fa-solid fa-square-check"></i> High-quality products
-                  only
-                </li>
-              </ul>
-              <a href=""
-                ><button
-                  class="px-8 py-4 bg-[#FFDC26] text-xl font-semibold rounded-lg"
-                >
-                  See More
-                </button></a
-              >
-            </div>
-          </div>
-          <!--left-->
-          <div class="flex-1 md:order-1">
-            <div
-              class="w-2/4 mx-auto bg-[#FFF9F4] p-3 m-20 rounded-lg border-2 border-[#f1e3d9]"
-            >
-              <img class="m-28" src="./assets/cute-pet-mid.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!--Browse by categories-->
       <section class="w-11/12 mx-auto my-20 lg:my-32">
         <h1 class="text-4xl font-bold mb-12">Browse By Categories</h1>
